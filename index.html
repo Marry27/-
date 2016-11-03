@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<link rel="stylesheet" href="style/public.css">
+		<link rel="stylesheet" href="style/style.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.js" ></script>
+		<!--<script type="text/javascript" src="js/myWheel_1.0.js"></script>-->
+		
+	</head>
+	<body>
+		<div id="superContainer">
+			<!--头部结构-->
+			<div id="header">
+				<div class="p20">
+					<div class="logo fl">
+						<a href="#"><img src="images/i_logo.png"></a>
+					</div>
+					<div class="contact fr">
+						<a href="#">
+							<span>太白云课堂：263201279</span>
+							<i></i>
+						</a>
+					</div>
+				</div>
+				
+			</div>
+			
+			<!--nav-->
+			<div id="nav">
+				<div class="menu">
+					<a href="menu.html" class="hover" title="网站导航"></a>
+				</div>
+			</div>
+			
+			<!--FOLLOW-->
+			<div class="follow">
+				<div class="follow-icon">
+					<img src="images/i_follow_title.png" />
+				</div>
+				<ul>
+					<li>
+						<a class="txqq" href="#">
+							<span class="line-1"></span>
+							<span class="line-2"></span>
+							<span class="line-3"></span>
+							<span class="line-4"></span>
+						</a>
+					</li>
+					<li>
+						<a class="zhanku" href="#">
+							<span class="line-1"></span>
+							<span class="line-2"></span>
+							<span class="line-3"></span>
+							<span class="line-4"></span>
+						</a>
+					</li>
+					<li>
+						<a class="lianmeng" href="#">
+							<span class="line-1"></span>
+							<span class="line-2"></span>
+							<span class="line-3"></span>
+							<span class="line-4"></span>
+						</a>
+					</li>
+					<li>
+						<a class="sina" href="#">
+							<span class="line-1"></span>
+							<span class="line-2"></span>
+							<span class="line-3"></span>
+							<span class="line-4"></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<!--主体结构-->
+			
+			<div id="content">
+				<!--第一板块-移动时代-->
+				<div class="section section1 con-app active">
+					<div class="app-bg"></div>
+					<div class="app-pic fadeInDown">
+						<img src="images/three-00.png" />
+					</div>
+					<div class="app-tit fadeInDown"><img src="images/three-01.png" /></div>
+					<div class="app-text fadeInDown"><img src="images/three-02.png" /></div>
+					<a href="case-list.html" class="fadeInDown">
+						<img src="images/three-03.png" />
+					</a>
+				</div>
+				<!--第二板块-品牌建站-->
+				<div class="section section2 con-web">
+					<div class="web-bg"></div>
+					<div class="web-pic">
+						<img src="images/four-00.png" />
+					</div>
+					<div class="web-tit"><img src="images/four-01.png" /></div>
+					<div class="web-text"><img src="images/four-02.png" /></div>
+					<a href="case-list.html">
+						<img src="images/three-03.png" />
+					</a>
+				</div>
+				<!--第三板块-太白设计-->
+				<div class="section section3 con-project">
+					<div class="project-bg"></div>
+					<div class="project-pic"></div>
+					<div class="project-tit"></div>
+					<div class="project-logo"></div>
+					<div class="project-text"></div>
+					<p></p>
+				</div>
+				<!--第四板块-高端团队-->
+				<div class="section section4 con-team">
+					<div class="team-bg"></div>
+					<div class="team-pic"></div>
+					<div class="team-tit"></div>
+					<div class="team-text"></div>
+					<p></p>
+				</div>
+			</div>
+			
+			<!--footer-->
+			<div id="footer">
+				<div class="ewm">
+					<img src="images/i_erweima.jpg" />
+				</div>
+				<div class="foot-text">
+					<p>
+						<strong>友情链接:</strong>
+						<a href="#">ifavART创意图片</a>
+						<a href="#">UEhtml</a>
+						<a href="#">狼牙创意网</a>
+						<a href="#">站长那些事</a>
+						<a href="#">素云阁</a>
+						<a href="#">更多>></a>
+						<span>Copyright （c）2015 太白设计. 皖icp备14020292</span>
+					</p>
+				</div>
+			</div>
+			
+			<!--左侧滑块-->
+			<div id="fullPage-nav">
+				<ul>
+					<li class="active" data-index="1">
+						<a href="#"></a>
+					</li>
+					<li data-index="2">
+						<a href="#"></a>
+					</li>
+					<li data-index="3">
+						<a href="#"></a>
+					</li>
+					<li data-index="4">
+						<a href="#"></a>
+					</li>
+				</ul>
+			</div>
+			
+			
+		</div>
+		<script>
+			
+			//获取整个浏览器的高度
+			var iH = $(window).height();
+			var timer = null;
+			//console.log(iH);
+			var n = 0;
+			
+			var scrollFunc = function (e) {
+		        
+		        e = e || window.event;
+		        if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件             
+		            if (e.wheelDelta > 0) { //当滑轮向上滚动时
+		            	clearTimeout(timer);
+		            	timer = setTimeout(function(){
+		            		n--;
+		            		//判断当滑到第一屏时，停在第一屏
+		            		if(n<0){
+					        	n=0;
+					        }
+		            		//执行动画函数
+		            		animate(n);
+		            	},100)
+		            }
+		            if (e.wheelDelta < 0) { //当滑轮向下滚动时
+		            	clearTimeout(timer);
+		            	timer = setTimeout(function(){
+		            		
+		            		n++;
+		            		//判断当到第四屏时，停在第四屏
+		            		if(n>3){
+								n=3;
+							}
+		            		//执行动画函数
+		            		animate(n);
+		            	},100)
+		                
+		            }
+		        } else if (e.detail) {  //Firefox滑轮事件
+		            if (e.detail> 0) { //当滑轮向上滚动时
+		            	clearTimeout(timer);
+		            	timer = setTimeout(function(){
+		            		n--;
+		            		if(n<0){
+					        	n=0;
+					        }
+		            		//执行动画函数
+		            		animate(n);
+		            	},100)
+		            }
+		            if (e.detail< 0) { //当滑轮向下滚动时
+		            	
+		            	clearTimeout(timer);
+		            	timer = setTimeout(function(){
+		            		n++;
+		            		//判断当n大于3时，让n=3
+		            		if(n>3){
+								n=3;
+							}
+		            		//执行动画函数
+		            		animate(n);
+		            	},50)
+		                
+		            }
+		            
+		        }
+		        
+				
+		      	//console.log(n);
+		    }
+			
+	    //给页面绑定滑轮滚动事件
+	    if (document.addEventListener) {
+	        document.addEventListener('DOMMouseScroll', scrollFunc, false);
+	    }
+	    //滚动滑轮触发scrollFunc方法
+	    window.onmousewheel = document.onmousewheel = scrollFunc; 
+
+		//点击左侧导航li时，给当前li添加class，其他兄弟节点删除class
+		$('#fullPage-nav li').click(function(){
+			$(this).addClass('active').siblings('li').removeClass('active');
+			//执行动画函数
+			animate(this.dataset.index-1);
+		})
+		
+		//封装函数
+		function animate(n){
+			//改变整个页面top值
+			$('#superContainer').css('top',-iH*n);
+			//删除全部class
+    		$('.section').removeClass('active');
+    		//给当前添加class
+    		$('.section:nth-child('+ (n+1) +')').addClass('active');
+    		//左侧导航滑屏
+			$('#fullPage-nav li').eq(n).addClass('active').siblings('li').removeClass('active');
+		}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,668 @@
+body,div,h1,h2,h3,h4,h5,p,ul,li,img,a,span{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    font-size: 12px;
+    list-style: none;
+    font-family: "微软雅黑";
+    font-weight: normal;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+.p20{
+    padding:20px;
+}
+
+html{
+    overflow: hidden;
+    height:100%;
+}
+body{
+    height:100%;
+    overflow: hidden;
+    position: relative;
+}
+//INDEX_STYLE
+#superContainer{
+    height:100%;
+    position:relative;
+    
+    
+    
+    //NAV-STYLE
+    #nav{
+        position: fixed;
+        top: 20%;
+        left: 20px;
+        z-index: 10;
+        width: 70px;
+        height: 78px;
+        overflow: hidden;
+        .menu{
+            width:100%;
+            height:100%;
+            background: url(../images/i_menu.png) 0 0 no-repeat;
+            position:absolute;
+            top:0;
+            left:0;
+            -webkit-transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            -moz-transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            -o-transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden;
+        }
+        .hover{
+            position: absolute;
+            top: 0;
+            cursor:pointer;
+            width:100%;
+            height:100%;
+            background:url(../images/i_menu_2.png)0 0 no-repeat ;
+            -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            -moz-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            -o-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
+        }
+        .hover{
+            left: -100%
+        }
+    }
+    #nav:hover{
+        .menu{
+            .hover{
+                left:0;
+            }
+        }
+    }
+    
+    
+    
+    //左侧滑块
+    #fullPage-nav{
+        width: 123px;
+        height: 200px;
+        background: url(../images/slider_btn_bg.png) 23px 140px no-repeat;
+        position: fixed;
+        z-index: 100;
+        top: 45%;
+        left: 0;
+        opacity: 1;
+        ul{
+            li{
+                width: 40px;
+                height: 21px;
+                margin: 10px 0 0 10px;
+                vertical-align: middle;
+                a{
+                    width:5px;
+                    height:5px;
+                    background:#fff;
+                    border-radius: 50%;
+                    display: block;
+                    margin:0 auto;
+                }
+            }
+            li.active{
+                a{
+                    border:1px solid #3fb560;
+                    padding:3px;
+                    background: none;
+                }
+            }
+        }
+    }
+    
+    //CONTENT-STYLE
+    #content{
+        position:relative;
+        height:100%;
+        .fadeInDown{
+            -webkit-animation-name: fadeInDown;
+            animation-name: fadeInDown;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+        //第一板块-移动时代
+        .con-app{
+            position:relative;
+            height:100%;
+            .app-bg{
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0;
+                background:url(../images/section3.jpg) center center no-repeat;
+                background-size: cover;
+            }
+            .app-pic{
+                position: absolute;
+                z-index: 2;
+                right: 0;
+                top: 0;
+                width: 574px;
+                height: 632px;
+                transition: all 1s;
+                opacity: 0;
+                margin-left: 0px;
+            }
+            
+            .app-tit{
+                position: absolute;
+                left: 50%;
+                top: -100px;
+                width: 578px;
+                height: 44px;
+                margin-left: -289px;
+                transition: all 1s;
+            }
+            
+            .app-text{
+                position: absolute;
+                bottom: -280px;
+                left: 50%;
+                width: 340px;
+                margin: 0 0 0 -170px;
+                height: 25px;
+                opacity: 0;
+                transition: all 1.7s;
+                bottom: 90px;
+            }
+            
+            a{
+                position: absolute;
+                bottom: -100px;
+                left: 50%;
+                width: 167px;
+                margin: 0 0 0 -83px;
+                height: 44px;
+                opacity: 0;
+                transition: all 1.7s;
+                bottom: 90px;
+            }
+            
+        }
+        .con-app.active{
+            .app-pic{
+                opacity: 1;
+                transition-delay: 0.5s;
+            }
+            .app-tit{
+                top: 50%;
+                margin-top: -100px;
+                transition-delay: 0.5s;
+            }
+            .app-text{
+                bottom: 50%;
+                margin-bottom: 15px;
+                opacity: 1;
+                transition-delay: 0.3s;
+            }
+            a{
+                bottom: 50%;
+                margin-bottom: -80px;
+                opacity: 1;
+                transition-delay: 0.5s;
+            }
+        }
+        
+        
+        //第二板块-品牌建站
+        .con-web{
+            position:relative;
+            height:100%;
+            .web-bg{
+                background: url(../images/section4.jpg) center center no-repeat;
+                background-size: cover;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .web-pic{
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                width: 494px;
+                margin: 0 0 0 -245px;
+                height: 407px;
+                background: url(../images/four-00.png) 0 0 no-repeat;
+                opacity: 0;
+                transition: all 1.7s;
+            }
+            
+            .web-tit{
+                position: absolute;
+                bottom: -30%;
+                width: 100%;
+                height: 45px;
+                transition: all 1s;
+                img{
+                    margin:0 auto;
+                    display: block;
+                }
+            }
+            
+            .web-text{
+                position: absolute;
+                bottom: -260px;
+                left: 50%;
+                width: 310px;
+                margin: 0 0 0 -155px;
+                height: 44px;
+                opacity: 0;
+                transition: all 1.7s;
+            }
+            
+            a{
+                position: absolute;
+                bottom: -100px;
+                left: 50%;
+                width: 167px;
+                margin: 0 0 0 -83px;
+                height: 44px;
+                opacity: 0;
+                transition: all 1.7s;
+                bottom: 90px;
+            }
+            
+        }
+        .con-web.active{
+            .web-pic{
+                bottom: 50%;
+                margin-bottom: -203px;
+                opacity: 1;
+                transition-delay: 0.5s;
+            }
+            .web-tit{
+                bottom: 50%;
+                margin-bottom: 100px;
+                opacity: 1;
+                transition-delay: 0.5s;
+            }
+            .web-text{
+                bottom: 50%;
+                margin-bottom: 25px;
+                opacity: 1;
+                transition-delay: 0.3s;
+            }
+            a{
+                bottom: 55%;
+                margin-bottom: -80px;
+                opacity: 1;
+                transition-delay: 0.3s;
+            }
+        }
+        
+        //第三板块-太白设计
+        .con-project{
+            position:relative;
+            height:100%;
+            .project-bg{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: url(../images/section1.jpg) center center no-repeat;
+                background-size: cover;
+            }
+            .project-pic{
+                position: absolute;
+                bottom: -280px;
+                left: 50%;
+                width: 100px;
+                margin: 0 0 0 -50px;
+                height: 10px;
+                opacity: 0;
+                transition: all 1.7s;
+                background: url(../images/one-01.png) 0 0 no-repeat;
+            }
+            
+            .project-tit{
+                position: absolute;
+                bottom: -50%;
+                width: 100%;
+                height: 230px;
+                transition: all 1s;
+                background: url(../images/one-03.png) 53% 0 no-repeat;
+            }
+            
+            .project-logo{
+                position: absolute;
+                left: 50%;
+                top: 0;
+                width: 100px;
+                height: 99px;
+                margin-left: -70px;
+                transition: all 1s;
+                background: url(../images/logo.png) 0 0 no-repeat;
+            }
+            .project-text{
+                position: absolute;
+                width: 475px;
+                height: 475px;
+                left: 50%;
+                top: 50%;
+                margin: -235px 0 0 -235px;
+                text-indent: -9999px;
+                background: url(../images/one-00.png) 0 0 no-repeat;
+                opacity: 0;
+                -webkit-transform: scale(0.5, 0.5);
+                transform: scale(0.5, 0.5);
+                transition: all 1s;
+            }
+            p{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 100px;
+                height: 122px;
+                margin: 0 0 0 -56px;
+                font-size: 14px;
+                color: #fff;
+                background: url(../images/one-02.png) 0 0 no-repeat;
+                opacity: 0;
+                transition: all 0.5s;
+            }
+        }
+        .con-project.active{
+            .project-pic{
+                bottom: 50%;
+                margin-bottom: 15px;
+                opacity: 1;
+                transition-delay: 0.3s;
+            }
+            .project-tit{
+                bottom: 50%;
+                margin-bottom: -155px;
+                opacity: 1;
+                transition-delay: 0.3s;
+            }
+            .project-logo{
+                top: 50%;
+                margin-top: -139px;
+                transition-delay: 0.3s;
+            }
+            .project-text{
+                opacity: 1;
+                -webkit-transform: scale(1, 1);
+                transform: scale(1, 1);
+                transition-delay: 0.3s;
+            }
+            p{
+                opacity: 1;
+                transition-duration: 1s;
+                transition-delay: 2s;
+            }
+        }
+        
+        //第四板块-高端团队
+        .con-team{
+            position:relative;
+            height:100%;
+            .team-bg{
+                background: url(../images/section2.jpg) center center no-repeat;
+                background-size: cover;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .team-pic{
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                top: 50%;
+                width: 343px;
+                height: 376px;
+                margin-top: -188px;
+                background: url(../images/two-01.png) 0 0 no-repeat;
+                transition: all 1s;
+                opacity: 0;
+                margin-left: -508px;
+            }
+            .team-tit{
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                top: 50%;
+                width: 343px;
+                height: 376px;
+                margin-top: -188px;
+                background: url(../images/two-02.png) right 0 no-repeat;
+                transition: all 1s;
+                opacity: 0;
+                margin-left: 0px;
+            }
+            .team-text{
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                bottom: 0%;
+                width: 343px;
+                height: 376px;
+                margin-left: -170px;
+                background: url(../images/two-03.png) top center no-repeat;
+                transition: all 1s;
+            }
+            p{
+                position: absolute;
+                left: 50%;
+                top: 0%;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                margin-left: -50%;
+                margin-top: 0px;
+                text-indent: -9999px;
+                background-repeat: no-repeat;
+                opacity: 0;
+                -webkit-transform: scale(0.5, 0.5);
+                transform: scale(0.5, 0.5);
+                transition: all 1s;
+                background: url(../images/two-00.png) center center no-repeat;
+            }
+        }
+        .con-team.active{
+            .team-pic{
+                opacity: 1;
+                margin-left: -168px;
+                transition-delay: 0.3s;
+            }
+            .team-tit{
+                margin-left: -171px;
+                opacity: 1;
+                transition-delay: 0.3s;
+            }
+            .team-text{
+                bottom: 50%;
+                margin-bottom: -188px;
+                transition-delay: 0.3s;
+            }
+            p{
+                opacity: 1;
+                -webkit-transform: scale(1, 1);
+                transform: scale(1, 1);
+                transition-delay: 0.3s;
+            }
+        }
+    }
+    
+   
+}
+
+
+//MENU_STYLE
+#menu{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url(../images/section1.jpg) 0 0 no-repeat;
+    background-size: cover;
+    ul{
+        width: 100%;
+        height: 100%;
+        li{
+            width:33%;
+            float:left;
+            height:50%;
+            display: inline;
+            text-align: center;
+            a{
+                display: block;
+                width: 280px;
+                height: 190px;
+                padding-top: 30px;
+                margin: 0 auto;
+                color: #fff;
+                top: 50%;
+                margin-top:-110px;
+                .menu-icon{
+                    width: 150px;
+                    height: 70px;
+                    border-bottom: 1px dashed #4f4f55;
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                    padding-bottom: 10px;
+                    i{
+                        display: block;
+                        width: 60px;
+                        height: 60px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            h2{
+                line-height:25px;
+                b{
+                    font-size:20px;
+                    font-weight: normal;
+                }
+                em{
+                    color:#3fb55f;
+                    font-weight: bold;
+                }
+            }
+        }
+        .menu-list1{
+            background: #30303a;
+            a{
+                i{
+                    background: url(../images/i_menu_img.png) 0 0 no-repeat;
+                }
+            }
+        }
+        .menu-list2{
+            background: #34343f;
+            a{
+                i{
+                    background: url(../images/i_menu_img.png) 0 -60px no-repeat;
+                }
+            }
+        }
+        .menu-list3{
+            background: #2c2c35;
+            a{
+                i{
+                    background: url(../images/i_menu_img.png) 0 -120px no-repeat;
+                }
+            }
+        }
+        .menu-list4{
+            background: none;
+            a{
+                i{
+                    background: url(../images/i_menu_img.png) 0 -180px no-repeat;
+                }
+            }
+        }
+        .menu-list5{
+            background: #30303a;
+            a{
+                i{
+                    background: url(../images/i_menu_img.png) 0 -240px no-repeat;
+                }
+            }
+        }
+        .menu-list6{
+            background: #292931;
+            a{
+                i{
+                    background: url(../images/i_menu_img.png) 0 -300px no-repeat;
+                }
+            }
+        }
+        
+        /*line*/
+        li{
+            a{
+                position: relative;
+                
+                span{
+                    position: absolute;
+                    background-color: #3fb560;
+                    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+                }
+                .line-1{
+                    left: 0;
+                    top: 0;
+                    width: 0%;
+                    height: 2px;
+                }
+                .line-2{
+                    right: 0;
+                    top: 0;
+                    width: 2px;
+                    height: 0%
+                }
+                .line-3{
+                    right: 0;
+                    bottom: 0;
+                    width: 0%;
+                    height: 2px
+                }
+                .line-4{
+                    left: 0;
+                    bottom: 0;
+                    width: 2px;
+                    height: 0%
+                }
+            }
+            a:hover{
+                .line-1,.line-3{
+                    width: 100%
+                }
+                .line-2,.line-4{
+                    height: 100%
+                }
+            }
+            
+        } 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

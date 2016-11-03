@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html style="height:auto;overflow: scroll;">
+	<head>
+		<meta charset="UTF-8">
+		<title>内页列表</title>
+		<link rel="stylesheet" href="style/public.css">
+		<link rel="stylesheet" href="style/content.css">
+		<link rel="stylesheet" href="style/animate.min.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.js" ></script>
+	</head>
+	<body>
+		<div id="body_case_list">
+			<!--头部结构-->
+			<div id="header">
+				<a href="#" class="active">全部</a>
+				<a href="#">品牌建站</a>
+				<a href="#">APP</a>
+			</div>
+			<div id="case-list-box">
+				<ul id="list">
+					<!--<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/case06_2.jpg" />
+							<div class="case-list-con">
+								<h3>优创互动</h3>
+								<p>by 品牌企业 2014/12/01</p>
+							</div>
+						</a>
+					</li>-->
+				</ul>
+			</div>
+			<script>
+				
+				var list = document.getElementById('list');
+				//console.log(list);
+			
+				var imgarr = ['images/case23_2.jpg','images/case24_2.jpg','images/case22_2.jpg','images/case21_2.jpg',
+					'images/case20_2.jpg','images/case19_2.jpg','images/case18_2.jpg','images/case17_2.jpg','images/case16_2.jpg',
+			
+				 'images/case15_2.jpg','images/case14_2.jpg','images/case13_2.jpg','images/case12_2.jpg',
+				 'images/case11_2.jpg','images/case10_2.jpg','images/case09_2.jpg','images/case08_2.jpg',
+				 'images/case07_2.jpg','images/case06_2.jpg','images/case05_2.jpg','images/case04_2.jpg',
+				 'images/case03_2.jpg','images/case02_2.jpg','images/case01_2.jpg'
+						
+					]
+				var imgtext = ['宜室宜家','离你远远的','温暖橘黄','青青草地','红豆生南国','春来发几枝','愿君多采撷','此物最相思','向晚意不适','驱车登古原',
+			
+						'夕阳无限好','只是近黄昏','只有我自己','闷人咖啡','静夜的单簧管','回忆是红色天空','我爱雀斑','天空','Keep It Together','长大',
+					]
+				
+				for(var i=0;i<imgarr.length;i++){
+					var listLi = document.createElement('li');
+					var listA = document.createElement('a');
+					var imgs = document.createElement('img');
+					var liDiv = document.createElement('div');
+					var h3 = document.createElement('h3');
+					var p = document.createElement('p');
+					
+					//console.log(listLi)
+					
+					imgs.src = imgarr[i];
+					listLi.appendChild(listA);
+					listA.appendChild(imgs);
+					liDiv.appendChild(h3);
+					liDiv.appendChild(p);
+					liDiv.className = 'case-list-con';
+					p.innerHTML = imgtext[i];
+					listA.appendChild(liDiv);
+					list.appendChild(listLi);
+				}
+				
+			</script>
+	</body>
+</html>
